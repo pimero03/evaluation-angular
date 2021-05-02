@@ -1,0 +1,91 @@
+
+<form [formGroup]="formulaire"  (ngSubmit)='onSubmit()'>
+
+  <label>
+        Nom:
+         <input type="text" formControlName="nom">
+           <div>
+              <span *ngIf="formulaire.controls.nom.errors?.required">
+                  Il faut ajouter un nom
+              </span>
+
+               <span *ngIf="formulaire.controls.nom.errors?.minLength">
+                 Minumum 3 caractere
+              </span>
+
+             <span *ngIf="formulaire.controls.nom.errors?.maxLength">
+                  maximum 10caractere
+             </span>
+            <span *ngIf="formulaire.controls.nom.errors?.pattern">
+              le nom n'est pas valide
+            </span>
+
+          </div>
+
+         <p>{{ formulaire.controls.nom.value}}</p>
+  </label>
+
+
+  <label>
+    Prenom:
+    <input type="text" formControlName="prenom">
+    <div>
+      <span *ngIf="formulaire.controls.prenom.errors?.required">
+             Il faut ajouter un prenom
+      </span>
+
+       <span *ngIf="formulaire.controls.prenom.errors?.minLength">
+            Minumum 3 caractere
+       </span>
+
+      <span *ngIf="formulaire.controls.prenom.errors?.maxLength">
+             maximum 15 caractere
+     </span>
+     <span *ngIf="formulaire.controls.nom.errors?.pattern">
+         le prenom n'est pas valide
+     </span>
+
+   </div>
+
+    <p>{{ formulaire.controls.prenom.value }}</p>
+  </label>
+
+  <label>
+    email:
+    <input type="email" formControlName="email">
+
+    <div>
+      <span *ngIf="formulaire.controls.nom.errors?.required">
+             Il faut ajouter un email
+      </span>
+
+       <span *ngIf="formulaire.controls.nom.errors?.email">
+            Email non valide
+       </span>
+
+   </div>
+    <p>{{ formulaire.controls.email.value }}</p>
+  </label>
+
+  <label>
+    Age:
+    <input type="number" formControlName="age">
+    <div>
+      <span *ngIf="formulaire.controls.nom.errors?.required">
+             Il faut ajouter  age
+      </span>
+
+       <span *ngIf="formulaire.controls.nom.errors?.min">
+            Minumum 1
+       </span>
+
+      <span *ngIf="formulaire.controls.nom.errors?.max">
+             maximum 120
+     </span>
+
+   </div>
+    <p>{{ formulaire.controls.age.value }}</p>
+
+  </label>
+    <button type="submit">sauvgarder</button>
+</form>
