@@ -31,14 +31,14 @@ export class FormulaireComponent implements OnInit {
   })
 
 
- get(){return this.formulaire.controls.value.get('nom')}
+ //get(){return this.formulaire.controls.value.get('nom')}
 
   ngOnInit(): void {
   }
 
 
   onSubmit(): void{
-
+         console.log(this.formulaire)
   }
 
 
